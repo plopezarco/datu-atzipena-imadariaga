@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="264.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg1.KalkulagailuaController">
+    <children>
+               <Label layoutX="57.0" layoutY="18.0" text="KALKULAGAILUA">
+         <font>
+            <Font name="Chilanka Regular" size="27.0" />
+         </font></Label>
+         <Button fx:id="batu" layoutX="212.0" layoutY="78.0" onAction="#handleBatuAction" text="=">
+         <font>
+            <Font size="25.0" />
+         </font></Button>
+        <Label fx:id="batuketa" layoutX="277.0" layoutY="78.0" minHeight="16" minWidth="69" prefHeight="48.0" prefWidth="109.0">
+         <font>
+            <Font size="25.0" />
+         </font></Label>
+        <TextField fx:id="batugai1" layoutX="17.0" layoutY="78.0" prefHeight="48.0" prefWidth="79.0">
+         <font>
+            <Font size="25.0" />
+         </font></TextField>
+        <TextField fx:id="batugai2" layoutX="129.0" layoutY="78.0" prefHeight="48.0" prefWidth="79.0">
+         <font>
+            <Font size="25.0" />
+         </font></TextField>
+        <Button fx:id="biderkatu" layoutX="212.0" layoutY="191.0" onAction="#handleBiderkatuAction" text="=">
+         <font>
+            <Font size="25.0" />
+         </font></Button>
+        <TextField fx:id="biderkagai1" layoutX="17.0" layoutY="187.0" prefHeight="48.0" prefWidth="79.0">
+         <font>
+            <Font size="25.0" />
+         </font></TextField>
+        <TextField fx:id="biderkagai2" layoutX="129.0" layoutY="187.0" prefHeight="48.0" prefWidth="79.0">
+         <font>
+            <Font size="25.0" />
+         </font></TextField>
+        <Label layoutX="102.0" layoutY="87.0" text="+">
+         <font>
+            <Font size="25.0" />
+         </font></Label>
+        <Label layoutX="105.0" layoutY="196.0" text="x">
+         <font>
+            <Font size="25.0" />
+         </font></Label>
+        <Label fx:id="biderketa" layoutX="277.0" layoutY="190.0" minHeight="16" minWidth="69" prefHeight="48.0" prefWidth="109.0">
+         <font>
+            <Font size="25.0" />
+         </font></Label>
+ 
+    </children>
+</AnchorPane>
