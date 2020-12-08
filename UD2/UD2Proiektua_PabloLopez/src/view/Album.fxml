@@ -12,17 +12,19 @@
       <Label fx:id="lbl_izenburua" layoutX="107.0" layoutY="14.0" prefHeight="47.0" prefWidth="372.0" text="Albumen Zerrenda" />
     <TableView fx:id="tableview_album" editable="true" layoutX="12.0" layoutY="70.0" prefHeight="200.0" prefWidth="630.0">
         <columns>
-            <TableColumn fx:id="albumIdCol" prefWidth="100.0" text="Album Id" />
+            <TableColumn fx:id="albumIdCol" prefWidth="80.0" text="Album Id" />
             <TableColumn fx:id="titleCol" prefWidth="300.0" text="Izenburua" />
-            <TableColumn fx:id="artistIdCol" prefWidth="200.0" text="Artista Id" />
+            <TableColumn fx:id="artistNameCol" prefWidth="200.0" text="Artista" />
         </columns>
     </TableView>
     <HBox fx:id="botoiak" layoutX="12.0" layoutY="270.0" prefHeight="45.0" prefWidth="630.0">
         <children>
-            <TextField fx:id="addTitle" prefWidth="300.0" promptText="Idatzi albumaren izenburua..." />
-            <TextField fx:id="addArtistIdCol" prefWidth="200.0" promptText="Idatzi artistaren Id-a..." />
+            <TextField fx:id="addTitle" prefWidth="200.0" promptText="Idatzi albumaren izenburua..." />
+            <TextField fx:id="addArtistName" prefWidth="300.0" promptText="Idatzi existitzen den artista baten izena..." />
             <Button fx:id="btn_albumGehitu" text="Gehitu" onAction="#albumaGehitu"/>
             <Button fx:id="btn_albumEzabatu" text="Ezabatu" onAction="#albumaEzabatu"/>
         </children>
     </HBox> 
+       <Button id="btn_trackAlbumBakoitzeko" layoutX="65.0" layoutY="337.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="246.0" text="Track kopurua album bakoitzeko" onAction="#trackAlbumBakoitzekoMenuIreki"/> 
+
 </AnchorPane>

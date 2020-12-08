@@ -3,13 +3,11 @@ package model;
 import global.Global;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.List;
-import java.util.Scanner;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.hibernate.HibernateException;
@@ -22,17 +20,14 @@ import org.hibernate.query.Query;
 
 public class Eragiketak {
 
-    static Scanner in = new Scanner(System.in);
+    static SessionFactory sf = new Configuration().configure().buildSessionFactory();
 
-    public static SessionFactory sf = new Configuration().configure().buildSessionFactory();
-
-    public static Connection connect() {
+    private static Connection connect() {
 
         String url = "jdbc:mysql://" + Global.ZERBITZARIA + "/" + Global.DATUBASEA;
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(url, Global.getErabiltzailea(), Global.getPasahitza());
-            //System.out.println("Konektatu zara");
         } catch (SQLException e) {
             System.out.println("Error Code:" + e.getErrorCode() + "-" + e.getMessage());
         }
@@ -43,59 +38,95 @@ public class Eragiketak {
     public static ObservableList albumakKargatu() {
         ObservableList<Album> albumOL = FXCollections.observableArrayList();
 
-        Session saioa = sf.openSession();
-        saioa.beginTransaction();
-        List result = saioa.createQuery("from Album").list();
-        for (Album a : (List<Album>) result) {
-            albumOL.add(a);
-        }
-        saioa.getTransaction().commit();
-        saioa.close();
+        String sql = "SELECT albumId, album.title, name as artistName from album inner join artist on album.artistId = artist.artistId";
+        try (Connection conn = connect();
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
 
+            // loop through the result set
+            while (rs.next()) {
+                albumOL.add(new Album(rs.getInt("albumId"),
+                        rs.getString("title"),
+                        rs.getString("artistName")));
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
         return albumOL;
     }
 
-    public static boolean albumaAldatu(int albumId, String zutabea, String balioBerria) {
-        try {
-            Session saioa = sf.openSession();
-            saioa.beginTransaction();
-            String qryString = "update Album a set a." + zutabea + "='" + balioBerria + "' where a.albumId=" + albumId;
-            Query query = saioa.createQuery(qryString);
-            query.executeUpdate();
-            saioa.getTransaction().commit();
-            saioa.close();
+    public static boolean albumaAldatu(int albumId, String balioBerria) {
+        String sql = "UPDATE album set title=? where albumId = " + albumId;
+        try (Connection conn = connect();
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, balioBerria);
+            pstmt.executeUpdate();
             return true;
-        } catch (HibernateException ex) {
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
             return false;
         }
     }
 
-    public static boolean albumGehitu(Album a) {
-        try {
-            Session saioa = sf.openSession();
-            saioa.beginTransaction();
-            saioa.save(a);
-            saioa.getTransaction().commit();
-            saioa.close();
-            return true;
-        } catch (Exception ex) {
+    public static boolean albumaGehitu(Album a) {
+        String sql = "Select artistId from artist where name ='" + a.getArtistName() + "'";     //Daukagun artista izenarekin, artista Id-a lortuko dugu
+        try (Connection conn = connect();
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
+
+            if (rs.next()) {
+                String azkenAlbumSQL = "select max(albumId) as azkena from album";  //Azken album + 1 egingo dugu, autoincrement ez delako
+                ResultSet rs2 = stmt.executeQuery(azkenAlbumSQL);
+                int artistId = rs.getInt("artistId");
+                if (rs2.next()) {
+                    int azkenAlbumId = rs2.getInt("azkena");
+                    azkenAlbumId = azkenAlbumId + 1;
+                    String insertSql = "INSERT INTO Album values (?,?,?)";  //Album taulan id, izenburua eta artista ID gehituko ditugu
+                    PreparedStatement pstmt = conn.prepareStatement(insertSql);
+                    pstmt.setInt(1, azkenAlbumId);
+                    pstmt.setString(2, a.getTitle());
+                    pstmt.setInt(3, artistId);
+                    pstmt.executeUpdate();
+                    return true;
+                }
+            }
+            return false;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
             return false;
         }
-
     }
 
     public static boolean albumaEzabatu(Album a) {
-        try {
-            Session saioa = sf.openSession();
-            saioa.beginTransaction();
-            Query query = saioa.createQuery("delete from Album a where a.albumId=" + a.getAlbumId());
-            query.executeUpdate();
-            saioa.getTransaction().commit();
-            saioa.close();
+        String sql = "DELETE from album where albumId = " + a.getAlbumId();
+        try (Connection conn = connect();
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.executeUpdate();
             return true;
-        } catch (Exception ex) {
+        } catch (SQLException e) {
             return false;
         }
+    }
+
+    //TRACK-ALBUM
+    public static ObservableList trackAlbumKargatu() {
+        ObservableList<TrackAlbum> trackAlbumOL = FXCollections.observableArrayList();
+
+        String sql = "select album.title as albumTitle, count(track.name) as trackKop from album inner join track on album.albumId = track.albumId group by album.title;";
+        try (Connection conn = connect();
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
+
+            // loop through the result set
+            while (rs.next()) {
+                trackAlbumOL.add(new TrackAlbum(rs.getString("albumTitle"),
+                        rs.getInt("trackKop")));
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return trackAlbumOL;
+
     }
 
     //ARTIST
@@ -157,6 +188,26 @@ public class Eragiketak {
         }
     }
 
+    //ALBUM-ARTIST
+    public static ObservableList albumArtistKargatu() {
+        ObservableList<AlbumArtist> albumArtistOL = FXCollections.observableArrayList();
+
+        String sql = "select artist.name as artistName, count(album.title) as albumKop from album inner join artist on album.artistId = artist.artistId group by artist.name";
+        try (Connection conn = connect();
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
+
+            // loop through the result set
+            while (rs.next()) {
+                albumArtistOL.add(new AlbumArtist(rs.getString("artistName"),
+                        rs.getInt("albumKop")));
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return albumArtistOL;
+    }
+
     //GENRE
     public static ObservableList generoakKargatu() {
         ObservableList<Genre> genreOL = FXCollections.observableArrayList();
@@ -215,6 +266,7 @@ public class Eragiketak {
         }
     }
 
+    //TRACK
     public static ObservableList trackakKargatu() {
         ObservableList<Track> trackOL = FXCollections.observableArrayList();
 
@@ -225,9 +277,9 @@ public class Eragiketak {
 
             // loop through the result set
             while (rs.next()) {
-                trackOL.add(new Track(rs.getInt("trackId"), 
-                        rs.getString("name"), 
-                        rs.getString("albumName"), 
+                trackOL.add(new Track(rs.getInt("trackId"),
+                        rs.getString("name"),
+                        rs.getString("albumName"),
                         rs.getString("genreName")));
             }
         } catch (SQLException e) {
@@ -236,46 +288,58 @@ public class Eragiketak {
         return trackOL;
     }
 
-    /*public static void getAlbumbyArtist() {
-        ArrayList<Integer> artistId = new ArrayList();
-        ArrayList<ArrayList<Album>> albumak = new ArrayList();
-
-        SessionFactory sf = new Configuration().configure().buildSessionFactory();
-
-        Session saioa = sf.openSession();
-        List result = saioa.createQuery("from Album").list();
-
-        for (Album a : (List<Album>) result) {                      //Album guztietatik iteratzen du
-            int artistIdIndex = artistId.indexOf(a.getArtistId());  //Zein artistarenaren id-a daukan
-            if (artistIdIndex == -1) {                              //Oraindik agertu ez den artistaId-a
-                if (a.getArtistId() == 0) {                         //Albumen taulako ArtistId zutabea beteta ez balego
-                    artistId.add(0);
-                } else {
-                    artistId.add(a.getArtistId());
-                }
-                albumak.add(new ArrayList());
-                albumak.get(albumak.size() - 1).add(a);
-            } else {
-                albumak.get(artistIdIndex).add(a);
-            }
+    public static boolean trackaAldatu(int trackId, String balioBerria) {
+        String sql = "UPDATE track set name='?' where trackId = " + trackId;
+        try (Connection conn = connect();
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, balioBerria);
+            return true;
+        } catch (SQLException e) {
+            return false;
         }
+    }
 
-        for (int artistIdIndex = 0; artistIdIndex < albumak.size(); artistIdIndex++) {
-            int zenbat = 0;
+    public static boolean trackaGehitu(Track t) {
+        String sql = "Select albumId from album where title ='" + t.getAlbumName() + "'";    //Daukagun album izenarekin, album Id-a lortuko dugu
+        String sql2 = "Select genreId from genre where name ='" + t.getGenreName() + "'";   //Daukagun genero izenarekin, genero Id-a lortuko dugu
+        String azkenTrack = "select max(trackId) as azkena from track";  //Azken track + 1 egingo dugu, autoincrement ez delako
+        try (Connection conn = connect();
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
 
-            Query querySelect = saioa.createQuery("select a.name from Artist a where a.artistId =" + artistIdIndex);
-            String izena = (String) querySelect.uniqueResult();
+            ResultSet rs2 = stmt.executeQuery(sql2);
+            ResultSet rs3 = stmt.executeQuery(azkenTrack);
+            if (rs.next() && rs2.next() && rs3.next()) {
 
-            System.out.println(izena + ":");
+                int albumId = rs.getInt("albumId");
+                int genreId = rs2.getInt("genreId");
+                int azkenTrackId = rs3.getInt("azkena");
+                azkenTrackId = azkenTrackId + 1;
 
-            for (Album a : albumak.get(artistIdIndex)) {
-                System.out.printf("\t%s\n", a.getTitle());
-                zenbat++;
+                String insertSql = "INSERT INTO Track (trackId, name, albumId, genreId, mediatypeId, milliseconds, unitprice) values (?,?,?,?, 1, 0, 0)";  //Track taulan trackId, izena, albumId eta genreId gehituko ditugu
+                PreparedStatement pstmt = conn.prepareStatement(insertSql);
+                pstmt.setInt(1, azkenTrackId);
+                pstmt.setString(2, t.getName());
+                pstmt.setInt(3, albumId);
+                pstmt.setInt(4, genreId);
+                pstmt.executeUpdate();
+                return true;
             }
-            System.out.println("------------------------------------------------------------");
-            System.out.printf("\tGuztira, %s artistak: %d album ditu\n\n", izena, zenbat);
+            return false;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return false;
         }
+    }
 
-        saioa.close();
-    }*/
+    public static boolean trackaEzabatu(Track t) {
+        String sql = "DELETE from track where trackId = " + t.getTrackId();
+        try (Connection conn = connect();
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            return false;
+        }
+    }
 }

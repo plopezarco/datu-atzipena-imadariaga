@@ -42,7 +42,7 @@ public class GenreController implements Initializable {
     private TableColumn<Genre, Integer> genreIdCol;
 
     @FXML
-    public TableColumn<Genre, String> nameCol;
+    private TableColumn<Genre, String> nameCol;
 
     @FXML
     private HBox botoiak;
@@ -82,12 +82,12 @@ public class GenreController implements Initializable {
     }   
     
      @FXML
-    public void genreGehitu(ActionEvent event) {
+    private void genreGehitu(ActionEvent event) {
         try {
             if (!addName.getText().equals("")) {
                 Genre g = new Genre(addName.getText());
                 if (Eragiketak.generoaGehitu(g)) {
-                    genreOL = Eragiketak.artistakKargatu();
+                    genreOL = Eragiketak.generoakKargatu();
                     tableview_genre.setItems(genreOL);
                     addName.setText("");
                 } else {
@@ -113,7 +113,7 @@ public class GenreController implements Initializable {
     }
 
     @FXML
-    public void genreEzabatu(ActionEvent event) {
+    private void genreEzabatu(ActionEvent event) {
         try {
             Genre g = tableview_genre.getSelectionModel().getSelectedItem();
             if (g != null) {

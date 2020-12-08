@@ -16,7 +16,7 @@
     </TableView>
     <HBox fx:id="botoiak" layoutX="12.0" layoutY="270.0" prefHeight="45.0" prefWidth="600.0">
         <children>
-            <TextField fx:id="addName" prefWidth="500.0" promptText="Idatzi genero berriaren izenburua..." />
+            <TextField fx:id="addName" prefWidth="400.0" promptText="Idatzi genero berriaren izena..." />
             <Button fx:id="btn_genreGehitu" text="Gehitu" onAction="#genreGehitu"/>
             <Button fx:id="btn_genreEzabatu" text="Ezabatu" onAction="#genreEzabatu"/>
         </children>

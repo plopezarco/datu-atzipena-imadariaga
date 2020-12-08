@@ -4,15 +4,21 @@ public class Album {
 
     int albumId;
     String title;
-    int artistId;
+    String artistName;
 
     public Album() {
 
     }
 
-    public Album(String title, int artistId) {
+    public Album(String title, String artistName) {
         this.title = title;
-        this.artistId = artistId;
+        this.artistName = artistName;
+    }
+
+    public Album(int albumId, String title, String artistName) {
+        this.albumId = albumId;
+        this.title = title;
+        this.artistName = artistName;
     }
 
     public int getAlbumId() {
@@ -31,17 +37,17 @@ public class Album {
         this.title = title;
     }
 
-    public int getArtistId() {
-        return artistId;
+    public String getArtistName() {
+        return artistName;
     }
 
-    public void setArtistId(int artistId) {
-        this.artistId = artistId;
+    public void setArtistName(String artistName) {
+        this.artistName = artistName;
     }
 
     @Override
     public String toString() {
-        return "Album [albumId=" + albumId + ", title=" + title + ", artistId=" + artistId + "]";
+        return "Album [albumId=" + albumId + ", title=" + title + ", artistName=" + artistName + "]";
     }
 
 }

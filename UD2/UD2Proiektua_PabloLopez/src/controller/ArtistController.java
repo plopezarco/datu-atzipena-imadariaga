@@ -5,12 +5,18 @@
  */
 package controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -20,7 +26,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
 import javafx.util.converter.IntegerStringConverter;
 import model.Artist;
 import model.Eragiketak;
@@ -42,7 +50,7 @@ public class ArtistController implements Initializable {
     private TableColumn<Artist, Integer> artistIdCol;
 
     @FXML
-    public TableColumn<Artist, String> nameCol;
+    private TableColumn<Artist, String> nameCol;
 
     @FXML
     private HBox botoiak;
@@ -82,7 +90,7 @@ public class ArtistController implements Initializable {
     }
 
     @FXML
-    public void artistGehitu(ActionEvent event) {
+    private void artistaGehitu(ActionEvent event) {
         try {
             if (!addName.getText().equals("")) {
                 Artist a = new Artist(addName.getText());
@@ -113,7 +121,7 @@ public class ArtistController implements Initializable {
     }
 
     @FXML
-    public void artistEzabatu(ActionEvent event) {
+    private void artistaEzabatu(ActionEvent event) {
         try {
             Artist a = tableview_artist.getSelectionModel().getSelectedItem();
             if (a != null) {
@@ -125,7 +133,7 @@ public class ArtistController implements Initializable {
                     alert.setContentText("Ezin da erregistroa ezabatu.");
                     alert.showAndWait();
                 }
-            }else {
+            } else {
                 Alert alert = new Alert(AlertType.WARNING);
                 alert.setTitle("Kontuz!!");
                 alert.setHeaderText("Artista bat aukeratu, mesedez.");
@@ -137,6 +145,24 @@ public class ArtistController implements Initializable {
             alert.setContentText("Errore ezezagun bat gertatu da.");
             alert.showAndWait();
         }
-        
+
+    }
+
+    @FXML
+    private void albumArtistaBakoitzekoMenuIreki(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/view/AlbumArtistaBakoitzeko.fxml"));
+
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+
+            stage.getIcons().add(new Image("icon.png"));
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.setTitle("Album Kopurua Artista Bakoitzeko");
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(FXMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
