@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<liburutegi>
+    	
+    <liburu isbn="011">
+        		
+        <izenburua>Sara izeneko gizona</izenburua>
+        		
+        <egilea>Bernardo Atzaga</egilea>
+        	
+    </liburu>
+    	
+    <liburu isbn="012">
+        		
+        <izenburua>Harry Potter</izenburua>
+        		
+        <egilea>J.K.Rowling</egilea>
+        	
+    </liburu>
+    	
+    <liburu isbn="013">
+        		
+        <izenburua>La sombra del viento</izenburua>
+        		
+        <egilea>Carlos Ruiz Zafon</egilea>
+        	
+    </liburu>
+    
+    <liburu isbn="014">
+        <izenburua>Vredaman</izenburua>
+        <egile>Unai Elorriaga</egile>
+    </liburu>
+</liburutegi>
