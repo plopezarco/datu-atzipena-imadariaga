@@ -45,6 +45,7 @@ public class TaulakIkusi {
             System.out.println(" |      -Genero baten abesti guztiak bilatu                          (4)|");
             System.out.println(" |      -Top X Abesti luzeenak                                       (5)|");
             System.out.println(" |      -Albumen prezioak                                            (6)|");
+            System.out.println(" |      -Playlist baten abestiak                                     (7)|");
             System.out.println(" | Atzera                                                            (0)|");
             System.out.println(" +----------------------------------------------------------------------+");
 
@@ -85,6 +86,10 @@ public class TaulakIkusi {
                 case 6:
                     System.out.println("");
                     trackAlbumPrezio();
+                    break;
+                case 7:
+                    System.out.println("");
+                    playlistTrack();
                     break;
                 case 0:
                     loop = false;
@@ -384,9 +389,54 @@ public class TaulakIkusi {
             throw new Error("Problem", ex);
         }
     }
+    
+    private static void playlistTrack() {
+         try {
+            boolean exists = false;
+            conn = DriverManager.getConnection(url, userName, password);
+            String aukera = "";
+            System.out.print("Sartu ezazu playlist-aren ID-a: ");
+            aukera = in.nextLine();
+
+            System.out.println();
+            Statement stmt = null;
+            String query = "SELECT Track.Name FROM Track INNER JOIN playlisttrack ON Track.TrackId = playlisttrack.TrackId WHERE playlisttrack.playlistId = " + aukera;
+            try {
+                stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(query);
+
+                System.out.println(" +----------------------------------------------------------------------+");
+                String out = centerString(70, "Hauek dira " + aukera + " playlistaren abesti guztiak");
+                System.out.println(" |" + out + "|");
+
+                System.out.println(" +----------------------------------------------------------------------+");
+                while (rs.next()) {
+
+                    String name = centerString(70, rs.getString("title"));
+                    System.out.println(" |" + name + "|");
+                    exists = true;
+                }
+                if (!exists) {
+                    out = centerString(70, aukera + " playlisya ez da existitzen.");
+                    System.out.println(" |" + out + "|");
+                }
+                System.out.println(" +----------------------------------------------------------------------+");
+            } catch (SQLException e) {
+                throw new Error("Problem", e);
+            } finally {
+                if (stmt != null) {
+                    stmt.close();
+                }
+            }
+        } catch (SQLException ex) {
+            throw new Error("Problem", ex);
+        }
+    }
+
 
     public static String centerString(int width, String s) {
         return String.format("%-" + width + "s", String.format("%" + (s.length() + (width - s.length()) / 2) + "s", s));
     }
+
 
 }
