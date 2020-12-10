@@ -1,0 +1,13 @@
+
+<!-- 
+  ~ Hibernate, Relational Persistence for Idiomatic Java
+  ~
+  ~ License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+  ~ See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+   -->
+<hibernate-mapping schema="chinook">
+<class entity-name="model.Artista" name="model.Artista" table="artist">
+<id name="id" column="ArtistId" />
+<property name="izena" column="Name"/>
+</class>
+</hibernate-mapping>
