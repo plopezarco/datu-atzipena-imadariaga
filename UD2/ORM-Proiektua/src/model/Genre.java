@@ -7,8 +7,7 @@ package model;
 
 /**
  *
- * @author Aritz
- */
+
 public class Genre {
     private int genreId;
     private String name;
@@ -19,6 +18,7 @@ public class Genre {
     }
 
     public Genre() {
+
     }
 
     public int getGenreId() {
@@ -28,20 +28,20 @@ public class Genre {
     public void setGenreId(int genreId) {
         this.genreId = genreId;
     }
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+
     }
 
     @Override
     public String toString() {
+
         return "Genre{" + "genreId=" + genreId + ", name=" + name + '}';
     }
     
-    
-    
+
 }

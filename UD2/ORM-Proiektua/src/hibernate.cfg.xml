@@ -5,11 +5,13 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">org.mariadb.jdbc.Driver</property>
+
         <property name="hibernate.connection.url">jdbc:mariadb://localhost/chinook</property>
         <property name="hibernate.connection.username">root</property>
 	<property name="hibernate.connection.password">Admin123</property>
         <mapping resource="model/Artist.hbm.xml"/>
         <mapping resource="model/Album.hbm.xml"/>
         <mapping resource="model/Genre.hbm.xml"/>
+
     </session-factory>
 </hibernate-configuration>

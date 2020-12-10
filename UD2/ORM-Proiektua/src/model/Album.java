@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package model;
-
-
 public class Album {
      int albumId;
      String title;
@@ -13,13 +11,6 @@ public class Album {
 
     public Album() {
     }
-
-    public Album(int albumId, String title, int artistId) {
-        this.albumId = albumId;
-        this.title = title;
-        this.artistId = artistId;
-    }
-    
 
     public int getAlbumId() {
         return albumId;
@@ -45,10 +36,10 @@ public class Album {
         this.artistId = artistId;
     }
 
+
     @Override
     public String toString() {
         return "Album{" + "albumId=" + albumId + ", title=" + title + ", artistId=" + artistId + '}';
     }
 
-  
 }
