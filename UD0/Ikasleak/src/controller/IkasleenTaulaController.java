@@ -22,6 +22,7 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.HBox;
 import javafx.util.converter.IntegerStringConverter;
 import model.Ikaslea;
+import model.MariaDB;
 import model.Memoria;
 
 /**
@@ -60,7 +61,7 @@ public class IkasleenTaulaController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         System.out.println("IkasleenTaula eszena inizializatzen dabil");
-        ObservableList<Ikaslea> ikZerrendaObservablea = Memoria.zerrendaSortu();
+        ObservableList<Ikaslea> ikZerrendaObservablea = MariaDB.datuakMemorianKargatu();
 
         //TableView-ko lerroak  ObservableList-arekin lotuko ditugu
         tableviua.setItems(ikZerrendaObservablea);
@@ -80,14 +81,19 @@ public class IkasleenTaulaController implements Initializable {
 
         izenaCol.setCellFactory(TextFieldTableCell.<Ikaslea>forTableColumn());
         izenaCol.setOnEditCommit((TableColumn.CellEditEvent<Ikaslea, String> t) -> {
+            
                     ((Ikaslea) t.getTableView().getItems().get(
                             t.getTablePosition().getRow())).setIzena(t.getNewValue());
+                    
+                    MariaDB.aldatu(t.getRowValue().getZenbakia(), "izena", t.getNewValue());
                 });
 
         abizena1Col.setCellFactory(TextFieldTableCell.<Ikaslea>forTableColumn());
         abizena1Col.setOnEditCommit((TableColumn.CellEditEvent<Ikaslea, String> t) -> {
                     ((Ikaslea) t.getTableView().getItems().get(
                             t.getTablePosition().getRow())).setAbizena1(t.getNewValue());
+                    
+                     MariaDB.aldatu(t.getRowValue().getZenbakia(), "abizena", t.getNewValue());
                 });
 
     }
@@ -95,13 +101,18 @@ public class IkasleenTaulaController implements Initializable {
     @FXML
     private void handleGehituAction(ActionEvent event) {
         System.out.println("Gehitu botoia sakatu duzu!");
-        //izenburua.setText("Gehitzen...");
+        
         Ikaslea p = new Ikaslea(
                 Integer.parseInt(addZenbakia.getText()),
                 addIzena.getText(),
                 addAbizena.getText());
         tableviua.getItems().add(p);
+        
+        
+        MariaDB.gehitu(Integer.parseInt(addZenbakia.getText()), addIzena.getText(), addAbizena.getText());
+        
         System.out.println("Ikasle berria gehitu da.");
+        
         addZenbakia.setText("");
         addIzena.setText("");
         addAbizena.setText("");
@@ -112,6 +123,8 @@ public class IkasleenTaulaController implements Initializable {
         System.out.println("Ezabatu botoia sakatu duzu!");
         Ikaslea ikaslea = tableviua.getSelectionModel().getSelectedItem();
         tableviua.getItems().remove(ikaslea);
+        
+        MariaDB.ezabatu(ikaslea);
         System.out.println("Aukeratutako ikaslea ezabatua izan da.");
     }
 
