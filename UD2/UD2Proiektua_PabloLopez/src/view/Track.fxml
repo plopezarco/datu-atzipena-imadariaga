@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TrackController">
+    <Label fx:id="lbl_izenburua" layoutX="107.0" layoutY="14.0" prefHeight="47.0" prefWidth="372.0" text="Tracken Zerrenda" />
+    <TableView fx:id="tableview_track" editable="true" layoutX="12.0" layoutY="70.0" prefHeight="200.0" prefWidth="600.0">
+        <columns>
+            <TableColumn fx:id="trackIdCol" prefWidth="80.0" text="Track Id" />
+            <TableColumn fx:id="nameCol" prefWidth="200.0" text="Izena" />
+            <TableColumn fx:id="albumNameCol" prefWidth="200.0" text="Album Izena" />
+            <TableColumn fx:id="genreNameCol" prefWidth="100.0" text="Generoa"/>
+        </columns>
+    </TableView>
+    <HBox fx:id="botoiak" layoutX="12.0" layoutY="270.0" prefHeight="45.0" prefWidth="630.0">
+        <children>
+            <TextField fx:id="addName" prefWidth="175.0" promptText="Idatzi track berriaren izena..." />
+            <TextField fx:id="addAlbumName" prefWidth="175.0" promptText="Idatzi album baten izena..." />
+            <TextField fx:id="addGenreName" prefWidth="150.0" promptText="Idatzi genero baten izena..." />
+            <Button fx:id="btn_trackGehitu" text="Gehitu" onAction="#trackaGehitu"/>
+            <Button fx:id="btn_trackEzabatu" text="Ezabatu" onAction="#albumaEzabatu"/>
+        </children>
+    </HBox> 
+</AnchorPane>

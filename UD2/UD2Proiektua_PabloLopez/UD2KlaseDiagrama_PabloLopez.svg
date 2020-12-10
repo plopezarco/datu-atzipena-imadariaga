@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="79cm" height="62cm" viewBox="-182 8 1571 1222" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #f2aeae" x="306.406" y="34.9158" width="1080.92" height="451.022"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="306.406" y="34.9158" width="1080.92" height="451.022"/>
+    <rect style="fill: #f2aeae" x="306.406" y="14.9158" width="42.5" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="306.406" y="14.9158" width="42.5" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="308.406" y="28.9158">model</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="331.406" y="59.9158" width="156.3" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="331.406" y="59.9158" width="156.3" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="409.556" y="79.9158">Album</text>
+    <rect style="fill: #ffffff" x="331.406" y="87.9158" width="156.3" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="331.406" y="87.9158" width="156.3" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="334.406" y="101.116">-albumId: int</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="334.406" y="117.116">-title: String</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="334.406" y="133.116">-artistName: String</text>
+    <rect style="fill: #ffffff" x="331.406" y="139.916" width="156.3" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="331.406" y="139.916" width="156.3" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="334.406" y="153.116">+()</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="522.918" y="66.6572" width="156.3" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="522.918" y="66.6572" width="156.3" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="601.068" y="86.6572">AlbumArtist</text>
+    <rect style="fill: #ffffff" x="522.918" y="94.6572" width="156.3" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="522.918" y="94.6572" width="156.3" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="525.918" y="107.857">-artistName: String</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="525.918" y="123.857">-albumKop: int</text>
+    <rect style="fill: #ffffff" x="522.918" y="130.657" width="156.3" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="522.918" y="130.657" width="156.3" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="525.918" y="143.857">+()</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="706.138" y="65.3602" width="117.8" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="706.138" y="65.3602" width="117.8" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="765.038" y="85.3602">Artist</text>
+    <rect style="fill: #ffffff" x="706.138" y="93.3602" width="117.8" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="706.138" y="93.3602" width="117.8" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="709.138" y="106.56">-artistId: int</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="709.138" y="122.56">-name: String</text>
+    <rect style="fill: #ffffff" x="706.138" y="129.36" width="117.8" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="706.138" y="129.36" width="117.8" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="709.138" y="142.56">+()</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="332.732" y="256.392" width="110.1" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="332.732" y="256.392" width="110.1" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="387.782" y="276.392">Genre</text>
+    <rect style="fill: #ffffff" x="332.732" y="284.392" width="110.1" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="332.732" y="284.392" width="110.1" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="335.732" y="297.592">-genreId: int</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="335.732" y="313.592">-name: String</text>
+    <rect style="fill: #ffffff" x="332.732" y="320.392" width="110.1" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="332.732" y="320.392" width="110.1" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="335.732" y="333.592">+()</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="472.736" y="261.33" width="148.6" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="472.736" y="261.33" width="148.6" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="547.036" y="281.33">Track</text>
+    <rect style="fill: #ffffff" x="472.736" y="289.33" width="148.6" height="68"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="472.736" y="289.33" width="148.6" height="68"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="475.736" y="302.53">-trackId: int</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="475.736" y="318.53">-name: String</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="475.736" y="334.53">-albumName: String</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="475.736" y="350.53">-trackId: int</text>
+    <rect style="fill: #ffffff" x="472.736" y="357.33" width="148.6" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="472.736" y="357.33" width="148.6" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="475.736" y="370.53">+()</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="671.306" y="255.112" width="156.3" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="671.306" y="255.112" width="156.3" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="749.456" y="275.112">TrackAlbum</text>
+    <rect style="fill: #ffffff" x="671.306" y="283.112" width="156.3" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="671.306" y="283.112" width="156.3" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="674.306" y="296.312">-albumTitle: String</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="674.306" y="312.312">-trackKop: int</text>
+    <rect style="fill: #ffffff" x="671.306" y="319.112" width="156.3" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="671.306" y="319.112" width="156.3" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="674.306" y="332.312">+()</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="887.146" y="87.1294" width="441.2" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="887.146" y="87.1294" width="441.2" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1107.75" y="107.129">Eragiketak</text>
+    <rect style="fill: #ffffff" x="887.146" y="115.129" width="441.2" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="887.146" y="115.129" width="441.2" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="890.146" y="128.329">-sf: SessionFactory</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="890.146" y1="134.729" x2="1036.45" y2="134.729"/>
+    <rect style="fill: #ffffff" x="887.146" y="135.129" width="441.2" height="276"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="887.146" y="135.129" width="441.2" height="276"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="890.146" y="148.329">+albumArtistKargatu(): ObservableList</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="890.146" y1="149.929" x2="1175.05" y2="149.929"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="890.146" y="164.329">+albumaAldatu(albumId:int,balioBerria:String): boolean</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="890.146" y1="165.929" x2="1305.95" y2="165.929"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="890.146" y="180.329">+albumaEzabatu(a:Album): boolean</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="890.146" y1="181.929" x2="1136.55" y2="181.929"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="890.146" y="196.329">+albumaGehitu(a:Album): boolean</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="890.146" y1="197.929" x2="1128.85" y2="197.929"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="890.146" y="212.329">+albumakKargatu(): ObservableList</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="890.146" y1="213.929" x2="1144.25" y2="213.929"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="890.146" y="228.329">+artistaAldatu(artistId:int,balioBerria:String): boolean</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="890.146" y1="229.929" x2="1321.35" y2="229.929"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="890.146" y="244.329">+artistaEzabatu(a:Artist): boolean</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="890.146" y1="245.929" x2="1151.95" y2="245.929"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="890.146" y="260.329">+artistaGehitu(a:Album): boolean</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="890.146" y1="261.929" x2="1136.55" y2="261.929"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="890.146" y="276.329">+artistakKargatu(): ObservableList</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="890.146" y1="277.929" x2="1151.95" y2="277.929"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="890.146" y="292.329">-connect(): Connection</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="890.146" y1="293.929" x2="1059.55" y2="293.929"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="890.146" y="308.329">+generoaAldatu(genreId:int,balioBerria:String): boolean</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="890.146" y1="309.929" x2="1313.65" y2="309.929"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="890.146" y="324.329">+generoaEzabatu(g:Genre): boolean</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="890.146" y1="325.929" x2="1144.25" y2="325.929"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="890.146" y="340.329">+generoaGehitu(g:Genre): boolean</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="890.146" y1="341.929" x2="1136.55" y2="341.929"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="890.146" y="356.329">+generoakKargatu(): ObservableList</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="890.146" y1="357.929" x2="1151.95" y2="357.929"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="890.146" y="372.329">+trackAlbumKargatu(): ObservableList</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="890.146" y1="373.929" x2="1167.35" y2="373.929"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="890.146" y="388.329">+trackaAldatu(trackId:int,balioBerria:String): boolean</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="890.146" y1="389.929" x2="1305.95" y2="389.929"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="890.146" y="404.329">+trackakKargatu(): ObservableList</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="890.146" y1="405.929" x2="1144.25" y2="405.929"/>
+  </g>
+  <g>
+    <rect style="fill: #9daafd" x="-153.862" y="247.691" width="274" height="363"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-153.862" y="247.691" width="274" height="363"/>
+    <rect style="fill: #9daafd" x="-153.862" y="227.691" width="50.2" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-153.862" y="227.691" width="50.2" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-151.862" y="241.691">global</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="-128.862" y="309.691" width="179.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-128.862" y="309.691" width="179.4" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="-39.1618" y="329.691">Global</text>
+    <rect style="fill: #ffffff" x="-128.862" y="337.691" width="179.4" height="68"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-128.862" y="337.691" width="179.4" height="68"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-125.862" y="350.891">+DATUBASEA: String</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="-125.862" y1="357.291" x2="12.7382" y2="357.291"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-125.862" y="366.891">+ZERBITZARIA: String</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="-125.862" y1="373.291" x2="28.1382" y2="373.291"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-125.862" y="382.891">-erabiltzailea: String</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="-125.862" y1="389.291" x2="43.5382" y2="389.291"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-125.862" y="398.891">-pasahitza: String</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="-125.862" y1="405.291" x2="12.7382" y2="405.291"/>
+    <rect style="fill: #ffffff" x="-128.862" y="405.691" width="179.4" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-128.862" y="405.691" width="179.4" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-125.862" y="418.891">+()</text>
+  </g>
+  <g>
+    <rect style="fill: #90ee90" x="324" y="554.274" width="1007.52" height="674.679"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="324" y="554.274" width="1007.52" height="674.679"/>
+    <rect style="fill: #90ee90" x="324" y="534.274" width="81" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="324" y="534.274" width="81" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="326" y="548.274">controller</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="903.454" y="888.628" width="348.8" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="903.454" y="888.628" width="348.8" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1077.85" y="908.628">AlbumArtistaBakoitzekoController</text>
+    <rect style="fill: #ffffff" x="903.454" y="916.628" width="348.8" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="903.454" y="916.628" width="348.8" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="906.454" y="929.828">-(@FXML elementu guztiak): @FXML</text>
+    <rect style="fill: #ffffff" x="903.454" y="936.628" width="348.8" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="903.454" y="936.628" width="348.8" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="906.454" y="949.828">+initialize(url:URL,rb:ResourceBundle): void</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="370.188" y="710.686" width="433.5" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="370.188" y="710.686" width="433.5" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="586.938" y="730.686">AlbumController</text>
+    <rect style="fill: #ffffff" x="370.188" y="738.686" width="433.5" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="370.188" y="738.686" width="433.5" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="373.188" y="751.886">-(FXML elementu guztiak): @FXML</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="373.188" y="767.886">-albumOL: ObservableList&lt;Album&gt;</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="373.188" y1="774.286" x2="611.888" y2="774.286"/>
+    <rect style="fill: #ffffff" x="370.188" y="774.686" width="433.5" height="68"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="370.188" y="774.686" width="433.5" height="68"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="373.188" y="787.886">+initialize(url:URL,rb:ResourceBundle): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="373.188" y="803.886">-albumaGehitu(event:ActionEvent): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="373.188" y="819.886">-albumaEzabatu(event:ActionEvent): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="373.188" y="835.886">-trackAlbumBakoitzekoMenuIreki(event:ActionEvent): void</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="360.946" y="876.13" width="448.9" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="360.946" y="876.13" width="448.9" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="585.396" y="896.13">ArtistController</text>
+    <rect style="fill: #ffffff" x="360.946" y="904.13" width="448.9" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="360.946" y="904.13" width="448.9" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="363.946" y="917.33">-(FXML elementu guztiak): @FXML</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="363.946" y="933.33">-artistOL: ObservableList&lt;Artist&gt;</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="363.946" y1="939.73" x2="618.046" y2="939.73"/>
+    <rect style="fill: #ffffff" x="360.946" y="940.13" width="448.9" height="68"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="360.946" y="940.13" width="448.9" height="68"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="363.946" y="953.33">+initialize(url:URL,rb:ResourceBundle): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="363.946" y="969.33">-artistaGehitu(event:ActionEvent): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="363.946" y="985.33">-artistaEzabatu(event:ActionEvent): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="363.946" y="1001.33">-albumArtistaBakoitzekoMenuIreki(event:ActionEvent): void</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="460.64" y="592.524" width="210.2" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="460.64" y="592.524" width="210.2" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="565.74" y="612.524">FXMain</text>
+    <rect style="fill: #ffffff" x="460.64" y="620.524" width="210.2" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="460.64" y="620.524" width="210.2" height="8"/>
+    <rect style="fill: #ffffff" x="460.64" y="628.524" width="210.2" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="460.64" y="628.524" width="210.2" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="463.64" y="641.724">+main(args:String[]): void</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="463.64" y1="643.324" x2="663.84" y2="643.324"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="463.64" y="657.724">+start(stage:Stage): void</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="394.434" y="1064.59" width="348.8" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="394.434" y="1064.59" width="348.8" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="568.834" y="1084.59">GenreController</text>
+    <rect style="fill: #ffffff" x="394.434" y="1092.59" width="348.8" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="394.434" y="1092.59" width="348.8" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="397.434" y="1105.79">-(FXML elementu guztiak): @FXML</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="397.434" y="1121.79">-genreOL: ObservableList&lt;Genre&gt;</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="397.434" y1="1128.19" x2="636.134" y2="1128.19"/>
+    <rect style="fill: #ffffff" x="394.434" y="1128.59" width="348.8" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="394.434" y="1128.59" width="348.8" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="397.434" y="1141.79">+initialize(url:URL,rb:ResourceBundle): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="397.434" y="1157.79">-genreGehitu(event:ActionEvent): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="397.434" y="1173.79">-genreEzabatu(event:ActionEvent): void</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="900.23" y="576.874" width="348.8" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="900.23" y="576.874" width="348.8" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1074.63" y="596.874">MainController</text>
+    <rect style="fill: #ffffff" x="900.23" y="604.874" width="348.8" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="900.23" y="604.874" width="348.8" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="903.23" y="618.074">-(FXML elementu guztiak): @FXML</text>
+    <rect style="fill: #ffffff" x="900.23" y="624.874" width="348.8" height="84"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="900.23" y="624.874" width="348.8" height="84"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="903.23" y="638.074">+initialize(url:URL,rb:ResourceBundle): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="903.23" y="654.074">-artistMenuIreki(event:ActionEvent): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="903.23" y="670.074">-albumMenuIreki(event:ActionEvent): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="903.23" y="686.074">-genreMenuIreki(event:ActionEvent): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="903.23" y="702.074">-trackMenuIreki(event:ActionEvent): void</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="900.152" y="755.88" width="348.8" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="900.152" y="755.88" width="348.8" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1074.55" y="775.88">TrackAlbumBakoitzekoController</text>
+    <rect style="fill: #ffffff" x="900.152" y="783.88" width="348.8" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="900.152" y="783.88" width="348.8" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="903.152" y="797.08">-(@FXML elementu guztiak): @FXML</text>
+    <rect style="fill: #ffffff" x="900.152" y="803.88" width="348.8" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="900.152" y="803.88" width="348.8" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="903.152" y="817.08">+initialize(url:URL,rb:ResourceBundle): void</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="897.248" y="1068.83" width="348.8" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="897.248" y="1068.83" width="348.8" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1071.65" y="1088.83">TrackController</text>
+    <rect style="fill: #ffffff" x="897.248" y="1096.83" width="348.8" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="897.248" y="1096.83" width="348.8" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="900.248" y="1110.03">-(FXML elementu guztiak): @FXML</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="900.248" y="1126.03">-trackOL: ObservableList&lt;Track&gt;</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="900.248" y1="1132.43" x2="1138.95" y2="1132.43"/>
+    <rect style="fill: #ffffff" x="897.248" y="1132.83" width="348.8" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="897.248" y="1132.83" width="348.8" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="900.248" y="1146.03">+initialize(url:URL,rb:ResourceBundle): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="900.248" y="1162.03">-trackGehitu(event:ActionEvent): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="900.248" y="1178.03">-trackEzabatu(event:ActionEvent): void</text>
+  </g>
+  <g>
+    <rect style="fill: #f9d485" x="-180.978" y="685.936" width="426.652" height="389.624"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-180.978" y="685.936" width="426.652" height="389.624"/>
+    <rect style="fill: #f9d485" x="-180.978" y="665.936" width="40" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-180.978" y="665.936" width="40" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-178.978" y="679.936">view</text>
+  </g>
+  <g>
+    <path style="fill: #ffffff" d="M -165.822 785.49 L 2.04605,785.49 L 2.04605,843.219 C -31.5275,834.56 -48.3143,831.673 -81.8879,831.673 C -115.461,831.673 -132.248,828.787 -165.822,820.128 L -165.822,785.49z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M -165.822 785.49 L 2.04605,785.49 L 2.04605,843.219 C -31.5275,834.56 -48.3143,831.673 -81.8879,831.673 C -115.461,831.673 -132.248,828.787 -165.822,820.128 L -165.822,785.49"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="-81.8879" y="807.609">
+      <tspan x="-81.8879" y="807.609">Album.fxml</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: #ffffff" d="M -163.79 887.683 L 4.07763,887.683 L 4.07763,945.413 C -29.4959,936.753 -46.2827,933.867 -79.8563,933.867 C -113.43,933.867 -130.217,930.98 -163.79,922.321 L -163.79,887.683z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M -163.79 887.683 L 4.07763,887.683 L 4.07763,945.413 C -29.4959,936.753 -46.2827,933.867 -79.8563,933.867 C -113.43,933.867 -130.217,930.98 -163.79,922.321 L -163.79,887.683"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="-79.8563" y="909.802">
+      <tspan x="-79.8563" y="909.802">Artist.fxml</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: #ffffff" d="M -164.962 979.908 L 2.90605,979.908 L 2.90605,1037.64 C -30.6675,1028.98 -47.4543,1026.09 -81.0279,1026.09 C -114.601,1026.09 -131.388,1023.2 -164.962,1014.55 L -164.962,979.908z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M -164.962 979.908 L 2.90605,979.908 L 2.90605,1037.64 C -30.6675,1028.98 -47.4543,1026.09 -81.0279,1026.09 C -114.601,1026.09 -131.388,1023.2 -164.962,1014.55 L -164.962,979.908"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="-81.0279" y="1002.03">
+      <tspan x="-81.0279" y="1002.03">Genre.fxml</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: #ffffff" d="M 60.8259 985.909 L 228.694,985.909 L 228.694,1043.64 C 195.12,1034.98 178.333,1032.09 144.76,1032.09 C 111.186,1032.09 94.3995,1029.21 60.8259,1020.55 L 60.8259,985.909z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 60.8259 985.909 L 228.694,985.909 L 228.694,1043.64 C 195.12,1034.98 178.333,1032.09 144.76,1032.09 C 111.186,1032.09 94.3995,1029.21 60.8259,1020.55 L 60.8259,985.909"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="144.76" y="1008.03">
+      <tspan x="144.76" y="1008.03">Track.fxml</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: #ffffff" d="M 20.5417 795.056 L 228.703,795.056 L 228.703,853.311 C 187.07,844.573 166.254,841.66 124.622,841.66 C 82.99,841.66 62.1739,838.747 20.5417,830.009 L 20.5417,795.056z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 20.5417 795.056 L 228.703,795.056 L 228.703,853.311 C 187.07,844.573 166.254,841.66 124.622,841.66 C 82.99,841.66 62.1739,838.747 20.5417,830.009 L 20.5417,795.056"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="124.622" y="817.333">
+      <tspan x="124.622" y="817.333">AlbumArtistaBakoitzeko.fxml</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: #ffffff" d="M 23.3702 891.417 L 231.531,891.417 L 231.531,949.673 C 189.899,940.934 169.083,938.022 127.451,938.022 C 85.8184,938.022 65.0023,935.109 23.3702,926.371 L 23.3702,891.417z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 23.3702 891.417 L 231.531,891.417 L 231.531,949.673 C 189.899,940.934 169.083,938.022 127.451,938.022 C 85.8184,938.022 65.0023,935.109 23.3702,926.371 L 23.3702,891.417"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="127.451" y="913.694">
+      <tspan x="127.451" y="913.694">TrackAlbumBakoitzeko.fxml</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: #ffffff" d="M -58.6538 709.938 L 109.214,709.938 L 109.214,767.667 C 75.6405,759.008 58.8537,756.121 25.2801,756.121 C -8.29344,756.121 -25.0802,753.235 -58.6538,744.576 L -58.6538,709.938z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M -58.6538 709.938 L 109.214,709.938 L 109.214,767.667 C 75.6405,759.008 58.8537,756.121 25.2801,756.121 C -8.29344,756.121 -25.0802,753.235 -58.6538,744.576 L -58.6538,709.938"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="25.2801" y="732.057">
+      <tspan x="25.2801" y="732.057">Main.fxml</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #dda6ff" x="-154.318" y="29.1276" width="326.266" height="159.769"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-154.318" y="29.1276" width="326.266" height="159.769"/>
+    <rect style="fill: #dda6ff" x="-154.318" y="9.12763" width="119.5" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-154.318" y="9.12763" width="119.5" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-152.318" y="23.1276">default-package</text>
+  </g>
+  <g>
+    <path style="fill: #ffffff" d="M -84.124 64.5796 L 83.7438,64.5796 L 83.7438,122.309 C 50.1703,113.649 33.3835,110.763 -0.190073,110.763 C -33.7636,110.763 -50.5504,107.876 -84.124,99.2171 L -84.124,64.5796z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M -84.124 64.5796 L 83.7438,64.5796 L 83.7438,122.309 C 50.1703,113.649 33.3835,110.763 -0.190073,110.763 C -33.7636,110.763 -50.5504,107.876 -84.124,99.2171 L -84.124,64.5796"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="-0.190073" y="86.6984">
+      <tspan x="-0.190073" y="86.6984">hibernate.cfg.xml</tspan>
+    </text>
+  </g>
+</svg>
