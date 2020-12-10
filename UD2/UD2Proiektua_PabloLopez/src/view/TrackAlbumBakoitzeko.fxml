@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TrackAlbumBakoitzekoController">
+    <TableView fx:id="tableview_trackAlbum" editable="false" layoutX="12.0" layoutY="70.0" prefHeight="200.0" prefWidth="600.0">
+        <columns>
+            <TableColumn fx:id="albumTitleCol" prefWidth="400.0" text="Albuma" />
+            <TableColumn fx:id="trackKopCol" prefWidth="200.0" text="Track Kopurua" />
+        </columns>
+    </TableView>
+</AnchorPane>

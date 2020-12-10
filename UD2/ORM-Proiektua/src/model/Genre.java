@@ -7,19 +7,18 @@ package model;
 
 /**
  *
- * @author Mikel
- */
+
 public class Genre {
     private int genreId;
-    private String izena;
+    private String name;
+
+    public Genre(int genreId, String name) {
+        this.genreId = genreId;
+        this.name = name;
+    }
 
     public Genre() {
-    }
-    
-    
-    public Genre(int genreId, String izena) {
-        this.genreId = genreId;
-        this.izena = izena;
+
     }
 
     public int getGenreId() {
@@ -29,19 +28,20 @@ public class Genre {
     public void setGenreId(int genreId) {
         this.genreId = genreId;
     }
-
-    public String getIzena() {
-        return izena;
+    public String getName() {
+        return name;
     }
 
-    public void setIzena(String izena) {
-        this.izena = izena;
+    public void setName(String name) {
+        this.name = name;
+
     }
 
     @Override
     public String toString() {
-        return "Genre{" + "genreId=" + genreId + ", izena=" + izena + '}';
+
+        return "Genre{" + "genreId=" + genreId + ", name=" + name + '}';
     }
     
-    
+
 }

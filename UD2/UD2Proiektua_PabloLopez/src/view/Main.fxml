@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+    <children>
+        <Label id="lbl_izenburua" layoutX="107.0" layoutY="14.0" prefHeight="47.0" prefWidth="372.0" text="CHINOOK DATUBASEA" />
+
+        <Button id="btn_artist" layoutX="118.0" layoutY="107.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="106.0" text="ARTISTAK" onAction="#artistMenuIreki"/>
+        <Button id="btn_album" layoutX="348.0" layoutY="107.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="106.0" text="ALBUMAK" onAction="#albumMenuIreki"/>
+        <Button id="btn_genre" layoutX="118.0" layoutY="257.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="106.0" text="GENEROAK" onAction="#genreMenuIreki"/>
+        <Button id="btn_track" layoutX="348.0" layoutY="257.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="106.0" text="TRACKAK" onAction="#trackMenuIreki"/>
+    </children>
+</AnchorPane>
