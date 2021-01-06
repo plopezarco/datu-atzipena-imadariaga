@@ -5,9 +5,7 @@
  */
 package eus.uni.dam2.mongodbproiektua.controller;
 
-import com.mongodb.DBObject;
 import com.mongodb.MongoClientSettings;
-import com.mongodb.MongoQueryException;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
@@ -38,7 +36,7 @@ public class MongoDB {
     private static MongoCollection<Anime> collectionAnimes = database.getCollection("animes", Anime.class);
     private static MongoCollection<Document> collectionUsers = database.getCollection("users");
 
-    public static ArrayList<Anime> getAnimeArrayList() {
+    public static ArrayList<Anime> getAnimeArrayList(int comparator) {
         Consumer<Anime> printBlock = new Consumer<Anime>() {
             @Override
             public void accept(final Anime anime) {
@@ -46,7 +44,21 @@ public class MongoDB {
             }
         };
         collectionAnimes.find().forEach(printBlock);
-        Collections.sort(animes, Anime.AnimeRatingComparator);
+        switch (comparator) {
+            case 1:
+            default:
+                Collections.sort(animes, Anime.AnimeNameComparatorAZ);
+                break;
+            case 2:
+                Collections.sort(animes, Anime.AnimeNameComparatorZA);
+                break;
+            case 3:
+                Collections.sort(animes, Anime.AnimeRatingComparatorAsc);
+                break;
+            case 4:
+                Collections.sort(animes, Anime.AnimeRatingComparatorDes);
+                break;
+        }
         return animes;
     }
 

@@ -20,7 +20,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -48,7 +47,7 @@ public class MainController implements Initializable {
     @FXML
     private Pane pane_login, pane_guest;
     @FXML
-    private Button btn_edit, btn_delete, btn_new, btn_lehenengoa, btn_aurrekoa, btn_hurrengoa, btn_azkena, btn_img, btn_edit_ok, btn_edit_cancel, btn_login, btn_register, btn_logout;
+    private Button btn_edit, btn_delete, btn_new, btn_first, btn_previous, btn_next, btn_last, btn_img, btn_edit_ok, btn_edit_cancel, btn_login, btn_register, btn_logout, btn_order_rating, btn_order_alpha;
     @FXML
     private TextField txt_title, txt_rating, txt_episodes;
     @FXML
@@ -58,12 +57,13 @@ public class MainController implements Initializable {
     private static int animeNumber = 0;
     public static boolean logged = false;
     public static String username;
+    private static int order = 1;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         loginChange();
         if (animes.isEmpty() && ap_main != null) {
-            animes = MongoDB.getAnimeArrayList();
+            animes = MongoDB.getAnimeArrayList(order);
             this.setAnime(animeNumber);
             lbl_description.setWrapText(true);
             lbl_studio.setOnMouseClicked(e -> {
@@ -98,6 +98,7 @@ public class MainController implements Initializable {
             Parent root = FXMLLoader.load(getClass().getResource("/fxml/Studio.fxml"));
             Scene scene = new Scene(root);
             Stage stage = new Stage();
+            stage.getIcons().add(new Image(getClass().getResource("/images/icon.png").toString()));
             stage.setScene(scene);
             stage.setResizable(false);
             stage.setTitle("Studio");
@@ -109,7 +110,7 @@ public class MainController implements Initializable {
 
     private void updateList() {
         animes.clear();
-        animes = MongoDB.getAnimeArrayList();
+        animes = MongoDB.getAnimeArrayList(order);
         try {
             this.setAnime(animeNumber);
         } catch (IndexOutOfBoundsException e) {
@@ -141,6 +142,7 @@ public class MainController implements Initializable {
             Stage stage = new Stage();
             Parent root = FXMLLoader.load(getClass().getResource("/fxml/Login.fxml"));
             Scene scene = new Scene(root);
+            stage.getIcons().add(new Image(getClass().getResource("/images/icon.png").toString()));
             stage.setScene(scene);
             stage.setResizable(false);
             stage.showAndWait();
@@ -182,6 +184,8 @@ public class MainController implements Initializable {
             Stage stage = new Stage();
             Parent root = FXMLLoader.load(getClass().getResource("/fxml/Edit.fxml"));
             Scene scene = new Scene(root);
+            stage.setTitle("Edit/Add Anime");
+            stage.getIcons().add(new Image(getClass().getResource("/images/icon.png").toString()));
             stage.setScene(scene);
             stage.setResizable(false);
             stage.showAndWait();
@@ -209,7 +213,7 @@ public class MainController implements Initializable {
     }
 
     @FXML
-    private void firstAnime(ActionEvent event) {
+    private void firstAnime() {
         if (animeNumber > 0) {
             animeNumber = 0;
             setAnime(animeNumber);
@@ -224,7 +228,7 @@ public class MainController implements Initializable {
     }
 
     @FXML
-    private void previousAnime(ActionEvent event) {
+    private void previousAnime() {
         if (animeNumber - 1 >= 0) {
             animeNumber--;
             setAnime(animeNumber);
@@ -239,7 +243,7 @@ public class MainController implements Initializable {
     }
 
     @FXML
-    private void nextAnime(ActionEvent event) {
+    private void nextAnime() {
         if (animeNumber + 1 <= animes.size() - 1) {
             animeNumber++;
             setAnime(animeNumber);
@@ -254,7 +258,7 @@ public class MainController implements Initializable {
     }
 
     @FXML
-    private void lastAnime(ActionEvent event) {
+    private void lastAnime() {
         if (animeNumber < animes.size() - 1) {
             animeNumber = animes.size() - 1;
             setAnime(animeNumber);
@@ -267,4 +271,33 @@ public class MainController implements Initializable {
         }
     }
 
+    @FXML
+    private void orderAlphaChange() {
+        if ("A-Z".equals(btn_order_alpha.getText())) {
+            animeNumber = 0;
+            btn_order_alpha.setText("Z-A");
+            order = 2;
+            updateList();
+        } else if ("Z-A".equals(btn_order_alpha.getText())) {
+            animeNumber = 0;
+            btn_order_alpha.setText("A-Z");
+            order = 1;
+            updateList();
+        }
+    }
+
+    @FXML
+    private void orderRatingChange() {
+        if ("Rating<".equals(btn_order_rating.getText())) {
+            animeNumber = 0;
+            btn_order_rating.setText("Rating>");
+            order = 4;
+            updateList();
+        } else if ("Rating>".equals(btn_order_rating.getText())) {
+            animeNumber = 0;
+            btn_order_rating.setText("Rating<");
+            order = 3;
+            updateList();
+        }
+    }
 }

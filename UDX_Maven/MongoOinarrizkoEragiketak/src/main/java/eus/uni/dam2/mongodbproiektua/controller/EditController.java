@@ -21,7 +21,6 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -114,15 +113,13 @@ public class EditController implements Initializable {
             Parent root = FXMLLoader.load(getClass().getResource("/fxml/EditStudio.fxml"));
             Scene scene = new Scene(root);
             Stage stage = new Stage();
+            stage.getIcons().add(new Image(getClass().getResource("/images/icon.png").toString()));
             stage.setScene(scene);
             stage.setResizable(false);
             stage.setTitle("Studio");
             stage.showAndWait();
             lbl_studio.setText(studio.getName());
-        } catch (IOException ex) {
-            Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (Exception e) {
-            Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, e);
         }
     }
 
@@ -148,39 +145,38 @@ public class EditController implements Initializable {
                     return a;
                 } else {
                     Alert alert = new Alert(Alert.AlertType.WARNING);
-                    alert.setTitle("Kontuz");
+                    alert.setTitle("Warning");
                     alert.initStyle(StageStyle.UTILITY);
                     alert.setHeaderText(null);
-                    alert.setContentText("Nota 0 eta 10 artean egon behar da");
+                    alert.setContentText("Rating has to be between 0 and 10, and use . for decimals");
                     alert.showAndWait();
                     return null;
                 }
             } else {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setTitle("Kontuz");
+                alert.setTitle("Warning");
                 alert.initStyle(StageStyle.UTILITY);
                 alert.setHeaderText(null);
-                alert.setContentText("Eremu guztiak bete");
+                alert.setContentText("Fill all the empty fields");
                 alert.showAndWait();
                 return null;
             }
         } catch (NumberFormatException e) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Kontuz");
+            alert.setTitle("Warning");
             alert.initStyle(StageStyle.UTILITY);
             alert.setHeaderText(null);
-            alert.setContentText("Sartu zenbakiak");
+            alert.setContentText("Fill Rating and Episodes with numbers");
             alert.showAndWait();
             return null;
         } catch (Exception e) {
-            e.printStackTrace();
             return null;
         }
     }
 
     //Kategoriak jasotzeko
     private List<String> getCategoriesfromString(String categories) {
-        List<String> listCategories = new ArrayList<String>();
+        List<String> listCategories = new ArrayList<>();
         String[] parts = categories.split("\n");
         listCategories.addAll(Arrays.asList(parts));
         return listCategories;
@@ -218,7 +214,7 @@ public class EditController implements Initializable {
     }
 
     @FXML
-    private void imageChooser(ActionEvent event) {
+    private void imageChooser() {
         String filePath = "";
         String fileName = "";
         FileChooser fileChooser = new FileChooser();
@@ -227,7 +223,7 @@ public class EditController implements Initializable {
                 new FileChooser.ExtensionFilter("JPG", "*.jpg"),
                 new FileChooser.ExtensionFilter("PNG", "*.png")
         );
-        fileChooser.setTitle("Zein fitxategi ikusi nahi duzu?");
+        fileChooser.setTitle("Choose a file");
         File file = fileChooser.showOpenDialog(null);
         if (file != null) {
             filePath = file.getPath();
@@ -262,10 +258,10 @@ public class EditController implements Initializable {
                 }
             } else {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setTitle("Kontuz");
+                alert.setTitle("Warning");
                 alert.initStyle(StageStyle.UTILITY);
                 alert.setHeaderText(null);
-                alert.setContentText("Irudi bat sartu, JPG edo PNG");
+                alert.setContentText("Choose a picture, JPG or PNG");
                 alert.showAndWait();
             }
         }

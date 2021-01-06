@@ -17,7 +17,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -87,19 +86,19 @@ public class EditStudioController implements Initializable {
                 return s;
             } else {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setTitle("Kontuz");
+                alert.setTitle("Warning");
                 alert.initStyle(StageStyle.UTILITY);
                 alert.setHeaderText(null);
-                alert.setContentText("Eremu guztiak bete");
+                alert.setContentText("Fill all the empty fields");
                 alert.showAndWait();
                 return null;
             }
         } catch (NumberFormatException e) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Kontuz");
+            alert.setTitle("Warning");
             alert.initStyle(StageStyle.UTILITY);
             alert.setHeaderText(null);
-            alert.setContentText("Sartu zenbakiak");
+            alert.setContentText("Fill Founded Year with numbers");
             alert.showAndWait();
             return null;
         } catch (Exception e) {
@@ -128,7 +127,7 @@ public class EditStudioController implements Initializable {
     }
 
     @FXML
-    private void imageChooser(ActionEvent event) {
+    private void imageChooser() {
         String filePath = "";
         String fileName = "";
         FileChooser fileChooser = new FileChooser();
@@ -137,7 +136,7 @@ public class EditStudioController implements Initializable {
                 new FileChooser.ExtensionFilter("JPG", "*.jpg"),
                 new FileChooser.ExtensionFilter("PNG", "*.png")
         );
-        fileChooser.setTitle("Zein fitxategi ikusi nahi duzu?");
+        fileChooser.setTitle("Choose a file");
         File file = fileChooser.showOpenDialog(null);
         if (file != null) {
             filePath = file.getPath();
@@ -162,21 +161,21 @@ public class EditStudioController implements Initializable {
                 } catch (IOException ex) {
                     Logger.getLogger(EditController.class.getName()).log(Level.SEVERE, null, ex);
                 }
+
+                String relativePath = "images/studio/" + fileName;
+                lbl_imagePath.setText(relativePath);
                 try {
-                    String relativePath = "images/studio/" + fileName;
-                    lbl_imagePath.setText(relativePath);
-                    studio.setImage(relativePath);
-                    String img = "/" + studio.getImage();
+                    String img = "/" + relativePath;
                     Image image = new Image(this.getClass().getResource(img).toString(), 350, 225, true, true);
                     img_studio.setImage(image);
                 } catch (Exception e) {
                 }
             } else {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setTitle("Kontuz");
+                alert.setTitle("Warning");
                 alert.initStyle(StageStyle.UTILITY);
                 alert.setHeaderText(null);
-                alert.setContentText("Irudi bat sartu, JPG edo PNG");
+                alert.setContentText("Choose a picture, JPG or PNG");
                 alert.showAndWait();
             }
         }

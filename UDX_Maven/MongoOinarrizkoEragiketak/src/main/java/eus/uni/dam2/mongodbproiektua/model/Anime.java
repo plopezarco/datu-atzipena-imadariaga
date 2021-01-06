@@ -115,21 +115,30 @@ public class Anime {
         return result;
     }
 
-    public static Comparator<Anime> AnimeNameComparator = new Comparator<Anime>() {
+    public static Comparator<Anime> AnimeNameComparatorAZ = new Comparator<Anime>() {
+        @Override
         public int compare(Anime a1, Anime a2) {
             String animeName1 = a1.getName().toUpperCase();
             String animeName2 = a2.getName().toUpperCase();
 
             //ascending order
             return animeName1.compareTo(animeName2);
-
-            //descending order
-            //return AnimeName2.compareTo(AnimeName1);
         }
     };
 
-    public static Comparator<Anime> AnimeRatingComparator = new Comparator<Anime>() {
+    public static Comparator<Anime> AnimeNameComparatorZA = new Comparator<Anime>() {
+        @Override
+        public int compare(Anime a1, Anime a2) {
+            String animeName1 = a1.getName().toUpperCase();
+            String animeName2 = a2.getName().toUpperCase();
 
+            //descending order
+            return animeName2.compareTo(animeName1);
+        }
+    };
+
+    public static Comparator<Anime> AnimeRatingComparatorAsc = new Comparator<Anime>() {
+        @Override
         public int compare(Anime a1, Anime a2) {
 
             double animeRating1 = a1.getRating();
@@ -137,9 +146,18 @@ public class Anime {
 
             /*For ascending order*/
             return Double.compare(animeRating1, animeRating2);
+        }
+    };
+
+    public static Comparator<Anime> AnimeRatingComparatorDes = new Comparator<Anime>() {
+        @Override
+        public int compare(Anime a1, Anime a2) {
+
+            double animeRating1 = a1.getRating();
+            double animeRating2 = a2.getRating();
 
             /*For descending order*/
-            //return (int) (animeRating2-animeRating1);
+            return Double.compare(animeRating2, animeRating1);
         }
     };
 }

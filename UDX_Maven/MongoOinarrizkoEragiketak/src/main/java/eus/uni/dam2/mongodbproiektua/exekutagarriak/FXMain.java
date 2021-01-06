@@ -18,6 +18,8 @@ public class FXMain extends Application {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/fxml/Main.fxml"));
             Scene scene = new Scene(root);
+            stage.setTitle("AnimeDB");
+            stage.getIcons().add(new Image(getClass().getResource("/images/icon.png").toString()));
             stage.setScene(scene);
             stage.setResizable(false);
             stage.show();

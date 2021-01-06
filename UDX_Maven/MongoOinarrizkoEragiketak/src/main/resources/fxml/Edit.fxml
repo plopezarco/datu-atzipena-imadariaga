@@ -12,7 +12,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="599.0" prefWidth="1078.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eus.uni.dam2.mongodbproiektua.controller.EditController">
    <children>
-      <ImageView fx:id="img_edit_anime" fitHeight="298.0" fitWidth="207.0" layoutX="45.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="img_edit_anime" fitHeight="289.0" fitWidth="207.0" layoutX="45.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
       </ImageView>
       <Separator layoutX="13.0" layoutY="39.0" prefHeight="15.0" prefWidth="1053.0" />
       <Pane layoutX="281.0" layoutY="70.0" prefHeight="113.0" prefWidth="762.0" style="-fx-background-color: #f6f6f6;">
@@ -72,13 +72,13 @@
       <TextArea fx:id="txt_description" layoutX="281.0" layoutY="231.0" prefHeight="254.0" prefWidth="762.0" promptText="Enter the synopsis" />
       <TextArea fx:id="txt_categories" layoutX="36.0" layoutY="448.0" prefHeight="137.0" prefWidth="225.0" promptText="Enter the categories separated by an Enter" />
       <Label fx:id="lbl_imagePath" layoutX="45.0" layoutY="377.0" prefHeight="28.0" prefWidth="199.0" />
-      <Button fx:id="btn_edit_cancel" layoutX="455.0" layoutY="507.0" mnemonicParsing="false" onAction="#cancel" prefHeight="68.0" prefWidth="93.0" text="✘" textFill="RED">
+      <Button fx:id="btn_edit_cancel" layoutX="455.0" layoutY="507.0" mnemonicParsing="false" onAction="#cancel" prefHeight="68.0" prefWidth="93.0" text="✘" style="-fx-background-color: #fff; -fx-cursor: hand; -fx-border-color: #F00; -fx-border-width: 3;" textFill="RED">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
       </Button>
-      <Button fx:id="btn_img" layoutX="91.0" layoutY="346.0" mnemonicParsing="false" onAction="#imageChooser" text="Choose an image" />
-      <Button fx:id="btn_edit_ok" layoutX="569.0" layoutY="507.0" mnemonicParsing="false" onAction="#confirm" prefHeight="68.0" prefWidth="93.0" text="✔" textFill="#18ff00">
+      <Button fx:id="btn_img" layoutX="91.0" layoutY="347.0" mnemonicParsing="false" onAction="#imageChooser" style="-fx-background-color: #4287f5; -fx-cursor: hand;" textFill="WHITE" text="Choose an image" />
+      <Button fx:id="btn_edit_ok" layoutX="569.0" layoutY="507.0" mnemonicParsing="false" onAction="#confirm" prefHeight="68.0" prefWidth="93.0" text="✔" style="-fx-background-color: #fff; -fx-cursor: hand; -fx-border-color: #18ff00; -fx-border-width: 3;" textFill="#18ff00">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>

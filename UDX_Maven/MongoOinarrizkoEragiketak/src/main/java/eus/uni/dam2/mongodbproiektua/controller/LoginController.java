@@ -7,7 +7,6 @@ package eus.uni.dam2.mongodbproiektua.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -85,10 +84,10 @@ public class LoginController implements Initializable {
                     }
                 } else {
                     Alert alert = new Alert(Alert.AlertType.WARNING);
-                    alert.setTitle("Kontuz");
+                    alert.setTitle("Warning");
                     alert.initStyle(StageStyle.UTILITY);
                     alert.setHeaderText(null);
-                    alert.setContentText("Eremu guztiak bete");
+                    alert.setContentText("Fill all the empty fields");
                     alert.showAndWait();
                 }
                 break;
@@ -121,10 +120,10 @@ public class LoginController implements Initializable {
                     }
                 } else {
                     Alert alert = new Alert(Alert.AlertType.WARNING);
-                    alert.setTitle("Kontuz");
+                    alert.setTitle("Warning");
                     alert.initStyle(StageStyle.UTILITY);
                     alert.setHeaderText(null);
-                    alert.setContentText("Eremu guztiak bete");
+                    alert.setContentText("Fill all the empty fields");
                     alert.showAndWait();
                 }
                 break;

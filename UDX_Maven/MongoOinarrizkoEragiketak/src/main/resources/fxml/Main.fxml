@@ -3,136 +3,148 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" fx:id="ap_main" prefHeight="600.0" prefWidth="1080.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eus.uni.dam2.mongodbproiektua.controller.MainController">
-   <children>
-      <ImageView fx:id="img_anime" fitHeight="350.0" fitWidth="225.0" layoutX="36.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/re_zero.jpg" />
-         </image>
-      </ImageView>
-      <Separator layoutX="14.0" layoutY="24.0" prefHeight="15.0" prefWidth="1053.0" />
-      <Label fx:id="lbl_name" layoutX="36.0" layoutY="-3.0" prefHeight="35.0" prefWidth="689.0" text="Title">
-         <font>
-            <Font name="System Bold" size="24.0" />
-         </font></Label>
-      <Pane layoutX="278.0" layoutY="52.0" prefHeight="104.0" prefWidth="385.0" style="-fx-background-color: #f6f6f6;">
-         <children>
-            <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="15.0" prefWidth="63.0" text="Rating">
-               <font>
-                  <Font size="14.0" />
-               </font></Label>
-            <Label fx:id="lbl_rating" alignment="CENTER" layoutX="14.0" layoutY="40.0" prefHeight="28.0" prefWidth="63.0" text="8.50">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
-            <Separator layoutX="88.0" layoutY="12.0" orientation="VERTICAL" prefHeight="79.0" prefWidth="20.0" />
-            <Label alignment="CENTER" layoutX="108.0" layoutY="14.0" prefHeight="15.0" prefWidth="63.0" text="Episodes">
-               <font>
-                  <Font size="14.0" />
-               </font></Label>
-            <Label fx:id="lbl_episodes" alignment="CENTER" layoutX="108.0" layoutY="40.0" prefHeight="28.0" prefWidth="63.0" text="25">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
-            <Separator layoutX="171.0" layoutY="12.0" orientation="VERTICAL" prefHeight="79.0" prefWidth="20.0" />
-            <Label alignment="CENTER" layoutX="248.0" layoutY="14.0" prefHeight="15.0" prefWidth="63.0" text="Studio">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label fx:id="lbl_studio" alignment="CENTER" layoutX="193.0" layoutY="40.0" prefHeight="35.0" prefWidth="173.0" style="-fx-cursor: hand;" text="studio" textFill="#0095ff" underline="true">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-      <Separator layoutX="278.0" layoutY="190.0" prefHeight="15.0" prefWidth="795.0" />
-      <Label layoutX="278.0" layoutY="165.0" prefHeight="28.0" prefWidth="795.0" text="Synopsis">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font></Label>
-      <Label fx:id="lbl_description" alignment="TOP_LEFT" layoutX="278.0" layoutY="205.0" prefHeight="289.0" prefWidth="795.0" text="synopsis" textAlignment="JUSTIFY" />
-      <Label layoutX="36.0" layoutY="391.0" prefHeight="28.0" prefWidth="225.0" text="Categories">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font></Label>
-      <Label fx:id="lbl_categories" alignment="TOP_LEFT" layoutX="36.0" layoutY="434.0" prefHeight="152.0" prefWidth="225.0" text="categories" />
-      <Separator layoutX="36.0" layoutY="419.0" prefHeight="15.0" prefWidth="225.0" />
-      <Separator layoutX="261.0" layoutY="37.0" orientation="VERTICAL" prefHeight="552.0" prefWidth="20.0" />
-      <Button fx:id="btn_hurrengoa" layoutX="852.0" layoutY="507.0" mnemonicParsing="false" onAction="#nextAnime" prefHeight="68.0" prefWidth="93.0" text="&gt;">
-         <font>
-            <Font name="System Bold" size="32.0" />
-         </font></Button>
-      <Button fx:id="btn_aurrekoa" layoutX="399.0" layoutY="507.0" mnemonicParsing="false" onAction="#previousAnime" prefHeight="68.0" prefWidth="93.0" text="&lt;">
-         <font>
-            <Font name="System Bold" size="32.0" />
-         </font></Button>
-      <Button fx:id="btn_lehenengoa" layoutX="291.0" layoutY="507.0" mnemonicParsing="false" onAction="#firstAnime" prefHeight="68.0" prefWidth="93.0" text="|&lt;">
-         <font>
-            <Font name="System Bold" size="32.0" />
-         </font>
-      </Button>
-      <Button fx:id="btn_azkena" layoutX="964.0" layoutY="507.0" mnemonicParsing="false" onAction="#lastAnime" prefHeight="68.0" prefWidth="93.0" text="&gt;|">
-         <font>
-            <Font name="System Bold" size="32.0" />
-         </font>
-      </Button>
-      <Label fx:id="lbl_animeNumber" alignment="CENTER" layoutX="626.0" layoutY="542.0" prefHeight="28.0" prefWidth="100.0" text="1 of 16">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Pane fx:id="pane_login" layoutX="696.0" layoutY="52.0" prefHeight="104.0" prefWidth="345.0" style="-fx-background-color: #f6f6f6;" visible="false">
-         <children>
-            <Button fx:id="btn_edit" layoutX="14.0" layoutY="18.0" mnemonicParsing="false" onAction="#editAnime" prefHeight="68.0" prefWidth="93.0" text="✎">
-               <font>
-                  <Font name="System Bold" size="32.0" />
-               </font>
-            </Button>
-            <Button fx:id="btn_new" layoutX="238.0" layoutY="18.0" mnemonicParsing="false" onAction="#addAnime" prefHeight="68.0" prefWidth="93.0" text="➕">
-               <font>
-                  <Font name="System Bold" size="32.0" />
-               </font>
-            </Button>
-            <Button fx:id="btn_delete" layoutX="126.0" layoutY="18.0" mnemonicParsing="false" onAction="#deleteAnime" prefHeight="68.0" prefWidth="93.0" text="✂">
-               <font>
-                  <Font name="System Bold" size="32.0" />
-               </font>
-            </Button>
-         </children>
-      </Pane>
-      <Pane fx:id="pane_guest" layoutX="696.0" layoutY="55.0" prefHeight="98.0" prefWidth="345.0" style="-fx-background-color: #f6f6f6;">
-         <children>
-            <Button fx:id="btn_login" layoutX="29.0" layoutY="15.0" mnemonicParsing="false" onAction="#login" prefHeight="68.0" prefWidth="100.0" text="Login">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Button>
-            <Button fx:id="btn_register" layoutX="202.0" layoutY="15.0" mnemonicParsing="false" onAction="#register" prefHeight="68.0" prefWidth="106.0" text="Register">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Button>
-         </children>
-      </Pane>
-      <Label fx:id="lbl_welcome" layoutX="725.0" layoutY="1.0" prefHeight="28.0" prefWidth="260.0" textAlignment="RIGHT">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Button fx:id="btn_logout" layoutX="987.0" layoutY="1.0" mnemonicParsing="false" onAction="#logout" prefHeight="28.0" prefWidth="79.0" text="Logout">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Button>
-   </children>
+    <children>
+        <ImageView fx:id="img_anime" fitHeight="350.0" fitWidth="225.0" layoutX="36.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" />
+        <Separator layoutX="14.0" layoutY="24.0" prefHeight="15.0" prefWidth="1053.0" />
+        <Label fx:id="lbl_name" layoutX="36.0" layoutY="-3.0" prefHeight="35.0" prefWidth="689.0" text="Title">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+        <Pane layoutX="278.0" layoutY="52.0" prefHeight="104.0" prefWidth="385.0" style="-fx-background-color: #f6f6f6;">
+            <children>
+                <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="15.0" prefWidth="63.0" style="-fx-background-color: #4287f5;" text="Rating" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lbl_rating" alignment="CENTER" layoutX="14.0" layoutY="40.0" prefHeight="28.0" prefWidth="63.0" text="8.50">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+                <Separator layoutX="88.0" layoutY="12.0" orientation="VERTICAL" prefHeight="79.0" prefWidth="20.0" />
+                <Label alignment="CENTER" layoutX="108.0" layoutY="14.0" prefHeight="15.0" prefWidth="63.0" style="-fx-background-color: #4287f5;" text="Episodes" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lbl_episodes" alignment="CENTER" layoutX="108.0" layoutY="40.0" prefHeight="28.0" prefWidth="63.0" text="25">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+                <Separator layoutX="171.0" layoutY="12.0" orientation="VERTICAL" prefHeight="79.0" prefWidth="20.0" />
+                <Label alignment="CENTER" layoutX="248.0" layoutY="14.0" prefHeight="15.0" prefWidth="63.0" style="-fx-background-color: #4287f5;" textFill="WHITE" text="Studio">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lbl_studio" alignment="CENTER" layoutX="193.0" layoutY="40.0" prefHeight="35.0" prefWidth="173.0" style="-fx-cursor: hand;" text="studio" textFill="#0095ff" underline="true">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <Separator layoutX="278.0" layoutY="190.0" prefHeight="15.0" prefWidth="795.0" />
+        <Label layoutX="278.0" layoutY="165.0" prefHeight="28.0" prefWidth="795.0" text="Synopsis">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Label fx:id="lbl_description" alignment="TOP_LEFT" layoutX="278.0" layoutY="205.0" prefHeight="289.0" prefWidth="795.0" text="synopsis" textAlignment="JUSTIFY" />
+        <Label layoutX="36.0" layoutY="391.0" prefHeight="28.0" prefWidth="225.0" text="Categories">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Label fx:id="lbl_categories" alignment="TOP_LEFT" layoutX="36.0" layoutY="434.0" prefHeight="152.0" prefWidth="225.0" text="categories" />
+        <Separator layoutX="36.0" layoutY="419.0" prefHeight="15.0" prefWidth="225.0" />
+        <Separator layoutX="261.0" layoutY="37.0" orientation="VERTICAL" prefHeight="552.0" prefWidth="20.0" />
+        <Button fx:id="btn_next" layoutX="852.0" layoutY="507.0" mnemonicParsing="false" onAction="#nextAnime" prefHeight="75.0" prefWidth="93.0" style="-fx-background-color: #fff; -fx-cursor: hand; -fx-border-color: #4287f5; -fx-border-width: 3;" text="&gt;" textFill="#4287f5">
+            <font>
+                <Font name="System Bold" size="32.0" />
+            </font>
+        </Button>
+        <Button fx:id="btn_previous" layoutX="399.0" layoutY="507.0" mnemonicParsing="false" onAction="#previousAnime" prefHeight="75.0" prefWidth="93.0" style="-fx-background-color: #fff; -fx-cursor: hand; -fx-border-color: #4287f5; -fx-border-width: 3;" text="&lt;" textFill="#4287f5">
+            <font>
+                <Font name="System Bold" size="32.0" />
+            </font>
+        </Button>
+        <Button fx:id="btn_first" layoutX="291.0" layoutY="507.0" mnemonicParsing="false" onAction="#firstAnime" prefHeight="68.0" prefWidth="93.0" style="-fx-background-color: #fff; -fx-cursor: hand; -fx-border-color: #4287f5; -fx-border-width: 3;" text="|&lt;" textFill="#4287f5">
+            <font>
+                <Font name="System Bold" size="32.0" />
+            </font>
+        </Button>
+        <Button fx:id="btn_last" layoutX="964.0" layoutY="507.0" mnemonicParsing="false" onAction="#lastAnime" prefHeight="68.0" prefWidth="93.0" style="-fx-background-color: #fff; -fx-cursor: hand; -fx-border-color: #4287f5; -fx-border-width: 3;" text="&gt;|" textFill="#4287f5">
+            <font>
+                <Font name="System Bold" size="32.0" />
+            </font>
+        </Button>
+        <Label fx:id="lbl_animeNumber" alignment="CENTER" layoutX="619.0" layoutY="542.0" prefHeight="28.0" prefWidth="100.0" text="1 of 16">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Pane fx:id="pane_login" layoutX="696.0" layoutY="52.0" prefHeight="104.0" prefWidth="345.0" style="-fx-background-color: #f6f6f6;" visible="false">
+            <children>
+                <Button fx:id="btn_edit" layoutX="14.0" layoutY="18.0" mnemonicParsing="false" onAction="#editAnime" prefHeight="68.0" prefWidth="93.0" style="-fx-background-color: #4287f5; -fx-cursor: hand;" textFill="WHITE" text="✎">
+                    <font>
+                        <Font name="System Bold" size="32.0" />
+                    </font>
+                </Button>
+                <Button fx:id="btn_new" layoutX="238.0" layoutY="18.0" mnemonicParsing="false" onAction="#addAnime" prefHeight="68.0" prefWidth="93.0" style="-fx-background-color: #4287f5; -fx-cursor: hand;" textFill="WHITE" text="➕">
+                    <font>
+                        <Font name="System Bold" size="32.0" />
+                    </font>
+                </Button>
+                <Button fx:id="btn_delete" layoutX="126.0" layoutY="18.0" mnemonicParsing="false" onAction="#deleteAnime" prefHeight="68.0" prefWidth="93.0" style="-fx-background-color: #4287f5; -fx-cursor: hand;" textFill="WHITE" text="✂">
+                    <font>
+                        <Font name="System Bold" size="32.0" />
+                    </font>
+                </Button>
+            </children>
+        </Pane>
+        <Pane fx:id="pane_guest" layoutX="696.0" layoutY="55.0" prefHeight="98.0" prefWidth="345.0" style="-fx-background-color: #f6f6f6;">
+            <children>
+                <Button fx:id="btn_login" layoutX="29.0" layoutY="15.0" mnemonicParsing="false" onAction="#login" prefHeight="68.0" prefWidth="100.0" style="-fx-background-color: #fff; -fx-cursor: hand; -fx-border-color: #4287f5; -fx-border-width: 3;" text="Login" textFill="#4287f5">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Button>
+                <Button fx:id="btn_register" layoutX="202.0" layoutY="15.0" mnemonicParsing="false" onAction="#register" prefHeight="68.0" prefWidth="106.0" style="-fx-background-color: #4287f5; -fx-cursor: hand;" textFill="WHITE" text="Register">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Button>
+            </children>
+        </Pane>
+        <Label fx:id="lbl_welcome" layoutX="725.0" layoutY="1.0" prefHeight="28.0" prefWidth="235.0" textAlignment="RIGHT">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Button fx:id="btn_logout" layoutX="962.0" layoutY="1.0" mnemonicParsing="false" onAction="#logout" prefHeight="28.0" prefWidth="79.0" style="-fx-background-color: #4287f5; -fx-cursor: hand;" text="Logout" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Button>
+        <Button fx:id="btn_order_alpha" layoutX="517.0" layoutY="507.0" mnemonicParsing="false" onAction="#orderAlphaChange" prefHeight="75.0" prefWidth="93.0" style="-fx-background-color: #fff; -fx-cursor: hand; -fx-border-color: #4287f5; -fx-border-width: 3;" text="A-Z" textFill="#4287f5">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Button>
+        <Button fx:id="btn_order_rating" layoutX="732.0" layoutY="507.0" mnemonicParsing="false" onAction="#orderRatingChange" prefHeight="75.0" prefWidth="93.0" style="-fx-background-color: #fff; -fx-cursor: hand; -fx-border-color: #4287f5; -fx-border-width: 3;" text="Rating&lt;" textFill="#4287f5">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Button>
+    </children>
 </AnchorPane>
